@@ -1,0 +1,814 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@100..900&family=Inter&family=Montserrat:wght@500&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+$dark-color: #363738;
+$gray-color: #6b6b6c;
+$white-color: #ffffff;
+$yellow-color: #ffce50;
+$primary-color: #0b7572;
+
+$inter-font: "Inter", sans-serif;
+$pt-sans-font: "PT Sans", sans-serif;
+$exo-2-font: "Exo 2", sans-serif;
+$montserrat-font: "Montserrat", sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+// main classes
+
+// conatiner
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+// titles
+.title {
+    color: $dark-color;
+    font: {
+        family: $exo-2-font;
+        size: 48px;
+        weight: 600;
+    }
+    line-height: 125%;
+}
+
+.mini-title {
+    color: $dark-color;
+    font: {
+        family: $exo-2-font;
+        size: 20px;
+        weight: 600;
+    }
+    line-height: 135%;
+}
+
+// description
+.desc {
+    color: $gray-color;
+    font: {
+        family: $pt-sans-font;
+        size: 16px;
+        weight: 400;
+    }
+    line-height: 150%;
+}
+
+// link
+.link {
+    color: $dark-color;
+    font-size: 16px;
+    position: relative;
+    text-decoration: none;
+    outline: none;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: $yellow-color;
+        right: 0;
+        bottom: -10px;
+        transition: all 0.3s linear;
+    }
+    &::after {
+        transition-delay: 0.6s;
+        left: 0;
+        right: initial;
+        width: 0;
+    }
+    &:hover::before,
+    &:focus::before {
+        width: 0;
+    }
+    &:hover::after,
+    &:focus::after {
+        width: 100%;
+    }
+}
+
+// main classes end
+
+// header
+.header {
+    padding: 25px 0;
+    width: 100%;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        .logo {
+            text-decoration: none;
+            color: $dark-color;
+            font: {
+                family: $inter-font;
+                size: 24px;
+                weight: 400;
+            }
+            line-height: 150%;
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+        .nav {
+            &__list {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+            }
+            &__link {
+                color: $dark-color;
+                text-decoration: none;
+                font: {
+                    family: $montserrat-font;
+                    size: 16px;
+                    weight: 500;
+                }
+
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+            .mobile-menu {
+                background: transparent;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                display: none;
+            }
+        }
+    }
+}
+
+// header end
+
+// hero
+.hero {
+    margin-top: 39px;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        .text {
+            width: 525px;
+            .desc {
+                margin: 40px 0;
+            }
+            .link {
+                font: {
+                    family: $pt-sans-font;
+                    weight: 700;
+                }
+                line-height: 150%;
+            }
+        }
+        .img {
+            width: 635px;
+            height: 505px;
+            background: url("../assets/images/hero.jpg") no-repeat lightgray 50% / cover;
+            border-radius: 10px;
+            transform: rotateY(180deg);
+        }
+    }
+}
+// hero end
+
+// services
+.services {
+    margin-top: 67px;
+    .container {
+        width: 100%;
+        border-radius: 20px;
+        background: $white-color;
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+        padding: 40px 16px;
+    }
+    &__list {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        padding: 0 105px 0 64px;
+        position: relative;
+        .sub-title,
+        .desc {
+            width: 228px;
+        }
+        .mini-title {
+            margin: 24px 0 16px 0;
+        }
+        &:not(:last-child)::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background: #d7d7dd;
+        }
+    }
+}
+// services end
+
+// whyus
+.whyus {
+    margin-top: 67px;
+    .container {
+        width: 100%;
+        > .img {
+            width: 100%;
+            height: 463px;
+            background: url("../assets/images/why-us-truck.png") no-repeat $white-color 100% / cover;
+            position: relative;
+            .title {
+                display: inline-block;
+                color: $white-color;
+                width: 769px;
+                height: 100%;
+                content: "";
+                padding: 178px 317px 0 90px;
+                font: {
+                    family: $exo-2-font;
+                    size: 48px;
+                    weight: 600;
+                }
+                line-height: 125%;
+                background: url("../assets/images/why-us-bg.svg") no-repeat transparent 100% / cover;
+            }
+        }
+    }
+    &__list {
+        margin-top: 72.5px;
+        padding: 0 66px;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 62px;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        .text {
+            width: 337px;
+            .mini-title {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+// whyus end
+
+// works
+.works {
+    margin-top: 122px;
+    .title {
+        margin-bottom: 32px;
+    }
+    &__list {
+        margin-top: 56px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        width: 393px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background: $white-color;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        .img {
+            width: 100%;
+            height: 247px;
+            background: url("../assets/images/works/work-1.png") no-repeat transparent 50% / cover;
+        }
+        .text {
+            padding: 24px 32px 42px 32px;
+            .desc {
+                margin: 16px 0 32px 0;
+            }
+            .link {
+                font: {
+                    family: $exo-2-font;
+                    weight: 600;
+                }
+                line-height: 135%;
+            }
+        }
+    }
+    &__item:nth-child(2) .img {
+        background-image: url("../assets/images/works/work-2.png");
+    }
+    &__item:nth-child(3) img {
+        background-image: url("../assets/images/works/work-3.png");
+    }
+}
+// works end
+
+// clients
+.clients {
+    margin-top: 210px;
+    table,
+    th,
+    td {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-collapse: collapse;
+    }
+    table {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: none;
+    }
+    th {
+        border-top: none;
+    }
+    th:first-child,
+    td:first-child {
+        border-left: none;
+    }
+    th:last-child,
+    td:last-child {
+        border-right: none;
+        border-bottom: none;
+    }
+    tr:last-child td {
+        border-bottom: none;
+    }
+    .container {
+        background: $primary-color;
+        padding: 100px 81px;
+        display: flex;
+        .title {
+            color: $white-color;
+        }
+    }
+    &__content {
+        width: 652px;
+        border-radius: 8px;
+        background: $white-color;
+        padding: 28px 32px;
+        .top {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 32px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 1px;
+                background: #d7d7dd;
+            }
+            .desc {
+                width: 274px;
+                font-size: 11px;
+            }
+        }
+        .table {
+            margin-top: 32px;
+            th {
+                padding: 10px 0;
+                background: $primary-color;
+                color: $white-color;
+                font: {
+                    family: $exo-2-font;
+                    size: 16px;
+                    weight: 600;
+                }
+                line-height: 150%;
+            }
+            td {
+                padding: 23px 16px;
+                .desc {
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
+                .price {
+                    color: $dark-color;
+                    font-family: $exo-2-font;
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 135%;
+                }
+            }
+            td:nth-child(2) {
+                .desc {
+                    width: 112px;
+                }
+            }
+            td:nth-child(3) {
+                .desc {
+                    width: 141px;
+                }
+            }
+            td:nth-child(4) {
+                .desc {
+                    width: 114px;
+                }
+                .tel {
+                    width: 117px;
+                }
+            }
+            .ttitle {
+                color: $dark-color;
+                font-family: $pt-sans-font;
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 135%;
+                margin-bottom: 10px;
+            }
+            .tel {
+                color: $dark-color;
+                font-family: $pt-sans-font;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 135%;
+            }
+        }
+    }
+}
+// clients end
+
+// steps
+.steps {
+    margin-top: 120px;
+    &__list {
+        margin-top: 48px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0 49px;
+        gap: 24px;
+    }
+    &__item {
+        fill: $white-color;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+        padding: 32px 96px;
+        border-radius: 8px;
+        display: flex;
+        gap: 56px;
+        .img {
+            border-radius: 4px;
+        }
+        .text {
+            .mini-title {
+                position: relative;
+                margin-bottom: calc(24px * 2);
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 86px;
+                    height: 3px;
+                    background: $yellow-color;
+                    left: 0;
+                    bottom: -24px;
+                }
+            }
+        }
+    }
+}
+// steps end
+
+// laptop
+@media screen and (max-width: 1208px) {
+    .container {
+        max-width: 690px;
+    }
+
+    .title {
+        font-size: 44px;
+    }
+
+    // header
+    .header {
+        .container {
+            .nav {
+                &__list {
+                    display: none;
+                }
+                .mobile-menu {
+                    display: block;
+                }
+            }
+        }
+    }
+    // header end
+
+    // hero
+    .hero {
+        .container {
+            justify-content: center;
+            .text {
+                text-align: center;
+                width: 100%;
+                .title {
+                    font-size: 44px;
+                }
+            }
+            .img {
+                margin-top: 83px;
+                width: 690px;
+                height: 314px;
+            }
+        }
+    }
+    // hero end
+
+    // services
+    .services {
+        margin-top: 41px;
+        .container {
+            width: 100%;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+        }
+        &__list {
+            flex-direction: column;
+            gap: 16px;
+        }
+        &__item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            border-radius: 20px;
+            background: $white-color;
+            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.12);
+            gap: 32px;
+            padding: 32px 32px 40px 32px;
+            .sub-title,
+            .desc {
+                width: 100%;
+            }
+            .mini-title {
+                margin: 0;
+                margin-bottom: 20px;
+            }
+            &:not(:last-child)::before {
+                display: none;
+            }
+        }
+    }
+    // services end
+
+    // whyus
+    .whyus {
+        margin-top: 97px;
+        .container {
+            max-width: 729px;
+            > .img {
+                height: 383px;
+                background-position: 1px 0;
+                .title {
+                    width: 600px;
+                    padding: 112px 227px 0 85px;
+                    font-size: 44px;
+                    background-image: url("../assets/images/why-us-laptop-bg.svg");
+                }
+            }
+        }
+        .title.mobile {
+            display: none;
+        }
+        &__list {
+            margin-top: 48px;
+            padding: 0 100.82px;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 48px;
+        }
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            .text {
+                width: 100%;
+                .mini-title {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+    // whyus end
+
+    // works
+    .works {
+        margin-top: 100px;
+        .title {
+            margin-bottom: 32px;
+        }
+        &__list {
+            margin-top: 40px;
+            flex-direction: column;
+            gap: 32px;
+        }
+        &__item {
+            width: 100%;
+            flex-direction: column;
+            .img {
+                width: 100%;
+            }
+            .text {
+                padding: 24px 32px 50px 32px;
+            }
+        }
+    }
+    // works end
+
+    // clients
+    .clients {
+        .container {
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+            padding: 64px 39px;
+            .title {
+                width: 100%;
+            }
+        }
+    }
+    // clients end
+
+    // steps
+    .steps {
+        margin-top: 88px;
+        &__list {
+            padding: 0;
+        }
+        &__item {
+            .img {
+                display: none;
+            }
+        }
+    }
+    // steps end
+}
+
+// laptop end
+
+// mobile
+@media screen and (max-width: 700px) {
+    .container {
+        max-width: 345px;
+    }
+
+    // main classes
+    .desc,
+    .link {
+        font-size: 15px;
+    }
+    .title {
+        font-size: 28px;
+    }
+    .mini-title {
+        font-size: 18px;
+    }
+    // main classes end
+
+    // hero
+    .hero {
+        .container {
+            .text {
+                text-align: left;
+                .title {
+                    font-size: 28px;
+                }
+            }
+            .img {
+                margin-top: 50px;
+                width: 345px;
+                height: 253px;
+            }
+        }
+    }
+    // hero end
+
+    // services
+    .services {
+        margin-top: 56px;
+        .container {
+            width: 100%;
+            border-radius: 20px;
+            background: $white-color;
+            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+            padding: 24px 0 24px 32px;
+        }
+        &__list {
+            gap: 24px;
+        }
+        &__item {
+            gap: 16px;
+            box-shadow: none;
+            padding: 0;
+            .mini-title {
+                margin: 0 0 12px 0;
+            }
+            .img {
+                width: 68px;
+            }
+        }
+    }
+    // services end
+
+    // whyus
+    .whyus {
+        margin-top: 57px;
+        .container {
+            max-width: 345px;
+            > .img {
+                display: none;
+            }
+        }
+        .title.mobile {
+            display: block;
+        }
+        &__list {
+            margin-top: 48px;
+            padding: 0;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 48px;
+        }
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            .img {
+                width: 68px;
+            }
+            .text {
+                width: 100%;
+                .mini-title {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+    // whyus end
+
+    // works
+    .works {
+        margin-top: 72px;
+        .title {
+            margin-bottom: 24px;
+        }
+        &__list {
+            margin-top: 32px;
+            flex-direction: column;
+            gap: 24px;
+        }
+        &__item {
+            width: 100%;
+            flex-direction: column;
+            .img {
+                width: 100%;
+                height: 222px;
+            }
+            .text {
+                padding: 24px 24px 35px 24px;
+                .desc {
+                    margin: 16px 0 24px 0;
+                }
+            }
+        }
+    }
+    // works end
+
+    // clients
+    .clients {
+        display: none;
+    }
+    // clients end
+
+    // steps
+    .steps {
+        margin-top: 64px;
+        &__item {
+            padding: 24px 47.5px;
+            .text {
+                .mini-title {
+                    margin-bottom: 16px;
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    // steps end
+}
+// mobile end
